@@ -1,4 +1,3 @@
-```markdown
 # PulseCheck
 
 **PulseCheck** is a multi-component project with dedicated documentation for each module. Below are links to the respective README files for detailed setup, usage, and contribution guidelines.
