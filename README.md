@@ -1,6 +1,6 @@
 # PulseCheck
 
-**PulseCheck** is a multi-component project with dedicated documentation for each module. Below are links to the respective README files for detailed setup, usage, and contribution guidelines.
+**PulseCheck** is a full-stack survey platform for collecting and analyzing lifestyle and food preference data. The project is split into two main modules: a React + TypeScript + Vite frontend and a Spring Boot + PostgreSQL backend.
 
 ---
 
@@ -8,11 +8,10 @@
 
 ```
 PulseCheck/
-├── frontend/           # Frontend application
-│   └── README.md       # Frontend documentation
-└── backend/            # Backend server
-     └── README.md       # Backend documentation
-
+├── front-end/           # Frontend application (React + Vite)
+│   └── README.md        # Frontend documentation
+└── back-end/            # Backend server (Spring Boot)
+    └── README.md        # Backend documentation
 ```
 
 ---

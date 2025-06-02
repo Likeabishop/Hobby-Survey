@@ -1,32 +1,28 @@
-# PulseCheck Survey Application 📊
+# PulseCheck Backend
 
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
-A Spring Boot application designed to gather and analyze survey data on people's lifestyle preferences. Provides a RESTful API for submitting survey responses and retrieving analytical insights from the collected data.
+A Spring Boot application for collecting and analyzing survey data on lifestyle and food preferences.
 
 ## 🌟 Features
 
 - **Survey Submission**: Capture personal details, favorite foods, and lifestyle ratings
-- **Data Storage**: Persist responses in PostgreSQL database
-- **Data Analytics**: Calculate insights including:
-    - Total surveys completed
-    - Average, youngest, and oldest age
-    - Favorite food percentages (Pizza, Pasta, Pap and Wors)
-    - Average lifestyle ratings (eating out, movies, radio, TV)
-- **Input Validation**: Ensure data integrity with validation rules
+- **Data Storage**: Persist responses in PostgreSQL
+- **Analytics**: Calculate total surveys, age stats, food preferences, and average ratings
+- **Validation**: Ensures all required fields are present and valid
 
 ## 🛠 Technologies Used
 
-- **Backend**: Spring Boot 3.5.0
-- **Database**: PostgreSQL
-- **ORM**: Spring Data JPA with Hibernate
-- **Utilities**: Lombok
-- **Build Tool**: Maven
-- **Language**: Java 21
+- **Spring Boot 3.5.0**
+- **Java 21**
+- **PostgreSQL**
+- **Spring Data JPA**
+- **Lombok**
+- **Maven**
 
-## 🚀 Project Setup
+## 🚀 Setup
 
 ### Prerequisites
 
@@ -36,7 +32,7 @@ A Spring Boot application designed to gather and analyze survey data on people's
 
 ### Database Configuration
 
-Configure your database connection in `src/main/resources/application.properties`:
+Edit `src/main/resources/application.properties` or use environment variables:
 
 ```properties
 spring.datasource.url=${SPRING_DATASOURCE_URL}
@@ -45,7 +41,7 @@ spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-Set environment variables:
+Set environment variables (recommended):
 
 ```bash
 export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/pulsecheck
@@ -53,20 +49,15 @@ export SPRING_DATASOURCE_USERNAME=postgres
 export SPRING_DATASOURCE_PASSWORD=yourpassword
 ```
 
-### Running the Application
+### Run the Application
 
-1. Clone the repository:
-   ```
-   After cloning the repository and updating the database configuration, you can run the application using Maven commands.
-   ```
+```bash
+cd back-end
+mvn clean install
+mvn spring-boot:run
+```
 
-2. Build and run:
-   ```bash
-   mvn clean install
-   mvn spring-boot:run
-   ```
-
-3. The application will start on port 8090
+The backend will start on port **8090**.
 
 ## 📡 API Endpoints
 
@@ -79,7 +70,9 @@ Base URL: `http://localhost:8090/api/surveys`
 {
   "fullName": "Jane Doe",
   "email": "jane.doe@example.com",
+  "contactNumber": "+2771234567",
   "age": 25,
+  "dateOfBirth": "1999-01-01",
   "favoriteFoods": ["Pizza", "Pap and Wors"],
   "ratingWatchMovies": 4,
   "ratingListenToRadio": 5,
@@ -88,12 +81,15 @@ Base URL: `http://localhost:8090/api/surveys`
 }
 ```
 
-**Success Response (201 Created):**
+**Response (201 Created):**
 ```json
 {
   "surveyId": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
   "fullName": "Jane Doe",
+  "email": "jane.doe@example.com",
+  "contactNumber": "+2771234567",
   "age": 25,
+  "dateOfBirth": "1999-01-01",
   "favoriteFoods": [
     {"foodItem": "Pizza"},
     {"foodItem": "Pap and Wors"}
@@ -104,7 +100,9 @@ Base URL: `http://localhost:8090/api/surveys`
 
 ### Get Survey Analytics (GET)
 
-**Success Response (200 OK):**
+**Endpoint:** `/api/surveys/analytics`
+
+**Response:**
 ```json
 {
   "totalSurveys": 5,
@@ -121,26 +119,28 @@ Base URL: `http://localhost:8090/api/surveys`
 }
 ```
 
-**No Data Response (200 OK):**
+**No Data Response:**
 ```json
-"No Surveys Available"
+"No Surveys Available."
 ```
 
-## 📂 Project Structure
+## 📂 Backend Structure
 
 ```
-pulsecheck/
+back-end/
 ├── src/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── pulsecheck/
 │   │   │       ├── controllers/       # API endpoints
-│   │   │       ├── DTOs/             # Data transfer objects
-│   │   │       ├── entities/         # JPA entities
-│   │   │       ├── repositories/     # Database repositories
-│   │   │       ├── services/         # Business logic
-│   │   │       └── Application.java
-│   │   └── resources/                # Config files
-│   └── test/                         # Test classes
-└── pom.xml                           # Maven config
+│   │   │       ├── DTOs/              # Data transfer objects
+│   │   │       ├── entities/          # JPA entities
+│   │   │       ├── repositories/      # Database repositories
+│   │   │       ├── services/          # Business logic
+│   │   │       └── PulsecheckApplication.java
+│   │   └── resources/                 # Config files
+│   └── test/                          # Test classes
+└── pom.xml                            # Maven config
 ```
+
+---
