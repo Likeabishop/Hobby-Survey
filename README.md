@@ -26,8 +26,8 @@ PulseCheck/
    ```
 
 2. **Navigate to the desired component** and follow its specific instructions:
-   - [Frontend Setup](/frontend/README.md)
-   - [Backend Setup](/backend/README.md)
+   - [Frontend Setup](/front-end/README.md)
+   - [Backend Setup](/back-end/README.md)
 
 ---
 
@@ -35,7 +35,7 @@ PulseCheck/
 
 | Component   | Description                          | Documentation Link           |
 |-------------|--------------------------------------|------------------------------|
-| Frontend    | User interface and client-side logic | [📖 Frontend README](/frontend/README.md) |
-| Backend     | Server, APIs, and database logic     | [📖 Backend README](/backend/README.md)  |
+| Frontend    | User interface and client-side logic | [📖 Frontend README](/front-end/README.md) |
+| Backend     | Server, APIs, and database logic     | [📖 Backend README](/back-end/README.md)  |
 
 ---
