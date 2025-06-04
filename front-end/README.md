@@ -1,6 +1,6 @@
-# PulseCheck Frontend
+# Hobby-Survey Frontend
 
-This is the frontend for PulseCheck, built with **React**, **TypeScript**, and **Vite**. It provides a modern, responsive UI for survey submission and analytics dashboard.
+This is the frontend for Hobby-Survey, built with **React**, **TypeScript**, and **Vite**. It provides a modern, responsive UI for survey submission and analytics dashboard.
 
 ## 🛠 Technologies Used
 
@@ -37,7 +37,7 @@ This is the frontend for PulseCheck, built with **React**, **TypeScript**, and *
 
 ## 📡 API Integration
 
-The frontend expects the backend API to be running at `http://localhost:8090/api/surveys`.
+The frontend expects the backend API to be running at `http://localhost:5000/api/survey`.
 
 ### Survey Submission (POST)
 
@@ -59,7 +59,7 @@ The frontend expects the backend API to be running at `http://localhost:8090/api
 
 ### Survey Analytics (GET)
 
-**Endpoint:** `/api/surveys/analytics`
+**Endpoint:** `/api/survey/analytics`
 
 **Response:**
 ```json
