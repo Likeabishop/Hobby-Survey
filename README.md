@@ -1,6 +1,6 @@
-# PulseCheck
+# HobbySurvey
 
-**PulseCheck** is a full-stack survey platform for collecting and analyzing lifestyle and food preference data. The project is split into two main modules: a React + TypeScript + Vite frontend and a Spring Boot + PostgreSQL backend.
+**HobbySurvey** is a full-stack survey platform for collecting and analyzing lifestyle and food preference data. The project is split into two main modules: a React + TypeScript + Vite frontend and a Node TS + PostgreSQL backend.
 
 ---
 
