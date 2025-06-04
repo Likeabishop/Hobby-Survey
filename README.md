@@ -21,7 +21,7 @@ PulseCheck/
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/Likeabishop/Hobby-Survey.git
-   cd PulseCheck
+   cd Hobby-Survey
    ```
 
 2. **Navigate to the desired component** and follow its specific instructions:
