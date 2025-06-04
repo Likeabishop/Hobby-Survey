@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8090/api/surveys';
+const API_BASE_URL = 'http://localhost:5000/api';
 
 interface SurveySubmission {
   fullName: string;
@@ -29,7 +29,7 @@ interface SurveyAnalytics {
 
 export const submitSurvey = async (surveyData: SurveySubmission) => {
   try {
-    const response = await fetch(`${API_BASE_URL}`, {
+    const response = await fetch(`${API_BASE_URL}/survey`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export const submitSurvey = async (surveyData: SurveySubmission) => {
 
 export const fetchAnalytics = async () => {
   try {
-    const response = await fetch(`${API_BASE_URL}/analytics`, {
+    const response = await fetch(`${API_BASE_URL}/survey/analytics`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -73,6 +73,11 @@ export const fetchAnalytics = async () => {
     }
 
     const data = await response.json();
+
+    // In fetchAnalytics
+    if (data === null || (typeof data === 'object' && data.totalSurveys === 0)) {
+      return null;
+    }
     
     // Handle case when no surveys exist
     if (typeof data === 'string' && data === 'No Surveys Available') {
