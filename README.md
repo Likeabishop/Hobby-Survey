@@ -10,7 +10,7 @@
 PulseCheck/
 ├── front-end/           # Frontend application (React + Vite)
 │   └── README.md        # Frontend documentation
-└── back-end/            # Backend server (Spring Boot)
+└── api/            # Backend server (Node TS)
     └── README.md        # Backend documentation
 ```
 
@@ -20,7 +20,7 @@ PulseCheck/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/NkgopolengGift/PulseCheck.git
+   git clone https://github.com/Likeabishop/Hobby-Survey.git
    cd PulseCheck
    ```
 
