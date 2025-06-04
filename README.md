@@ -7,7 +7,7 @@
 ## 📂 Project Structure
 
 ```
-PulseCheck/
+HobbySurvey/
 ├── front-end/           # Frontend application (React + Vite)
 │   └── README.md        # Frontend documentation
 └── api/            # Backend server (Node TS)
